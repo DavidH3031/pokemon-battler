@@ -12,7 +12,7 @@ namespace pokemon_battler.Pokemon
         public string Type { get; set; } = "normal";
         public int HitPoints { get; set; }
         public int AttackDamage { get; set; }
-        public string AttackName { get; set; }
+        public string AttackName { get; set; } = "Tackle";
         public List<string> EffectiveAgainst { get; set; } = new List<string>();
         public List<string> WeakAgainst { get; set; } = new List<string>();
         public Pokemon(string name, string type, int hitPoints, int attackDamage, string attackName, List<string> effectiveAgainst, List<string> weakAgainst)
@@ -26,14 +26,15 @@ namespace pokemon_battler.Pokemon
             WeakAgainst = weakAgainst;
         }
 
-        public bool isEffectiveAgainst(Pokemon pokemon)
+        public bool IsEffectiveAgainst(Pokemon pokemon)
         {
             if (Type == "normal") return false;
             if (EffectiveAgainst.Contains(pokemon.Type))
             {
                 Console.WriteLine($"{Name} is effective against {pokemon.Name}");
                 return true;
-            }else
+            }
+            else
             {
                 Console.WriteLine($"{Name} is not effective against {pokemon.Name}");
                 return false;
@@ -41,7 +42,7 @@ namespace pokemon_battler.Pokemon
 
         }
 
-        public bool isWeakAgainst(Pokemon pokemon)
+        public bool IsWeakAgainst(Pokemon pokemon)
         {
             if (Type == "normal") return false;
             if (WeakAgainst.Contains(pokemon.Type))
@@ -55,6 +56,23 @@ namespace pokemon_battler.Pokemon
                 return false;
             }
 
+        }
+
+        public void TakeDamage(int atkDmg)
+        {
+            HitPoints -= atkDmg;
+            if(HitPoints < 0) HitPoints = 0;
+            Console.WriteLine($"🗡️ {Name} took {atkDmg} damage and now has {HitPoints} health left!");
+        }
+
+        public int UseAttack()
+        {
+            return AttackDamage;
+        }
+
+        public bool HasFainted()
+        {
+            return HitPoints == 0;
         }
     }
 }
