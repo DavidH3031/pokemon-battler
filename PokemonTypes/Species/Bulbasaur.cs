@@ -1,10 +1,11 @@
-﻿using System;
+﻿using pokemon_battler.PokemonTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pokemon_battler.Pokemon.Species
+namespace pokemon_battler.PokemonTypes.Species
 {
     internal class Bulbasaur : Grass
     {

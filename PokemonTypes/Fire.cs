@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pokemon_battler.Pokemon
+namespace pokemon_battler.PokemonTypes
 {
     public class Fire : Pokemon
     {

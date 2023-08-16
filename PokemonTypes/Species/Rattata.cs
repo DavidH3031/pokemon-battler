@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pokemon_battler.Pokemon.Species
+namespace pokemon_battler.PokemonTypes.Species
 {
     public class Rattata : Pokemon
     {

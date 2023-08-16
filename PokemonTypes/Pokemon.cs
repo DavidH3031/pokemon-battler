@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pokemon_battler.Pokemon
+namespace pokemon_battler.PokemonTypes
 {
     public class Pokemon
     {
@@ -61,7 +61,7 @@ namespace pokemon_battler.Pokemon
         public void TakeDamage(int atkDmg)
         {
             HitPoints -= atkDmg;
-            if(HitPoints < 0) HitPoints = 0;
+            if (HitPoints < 0) HitPoints = 0;
             Console.WriteLine($"🗡️ {Name} took {atkDmg} damage and now has {HitPoints} health left!");
         }
 
