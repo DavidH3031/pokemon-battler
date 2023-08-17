@@ -18,6 +18,8 @@ namespace pokemon_battler
             new Pokeball(),
             new Pokeball(),
         };
+
+        public bool EmptyBelt = true;
         public Trainer(string name) 
         {
             Name = name;
@@ -30,6 +32,7 @@ namespace pokemon_battler
                 if (Belt[i].Occupied == false)
                 {
                     Belt[i].Throw(pokemon);
+                    EmptyBelt = false;
                     break;
                 }
             }
